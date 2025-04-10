@@ -21,7 +21,7 @@ resource "aws_instance" "ec2" {
         encrypted             = true
         delete_on_termination = true
         tags = {
-            "Name"    = "${var.infra_provider}-${var.client}-${var.application_domain}${var.environment}-ebs-${var.ressource_name}-root"
+            "Name"    = "${var.infra_provider}-${var.owner}-${var.project_application}${var.environment}-ebs-${var.ressource_name}-root"
         }
     }
   tags = merge(
@@ -29,7 +29,7 @@ resource "aws_instance" "ec2" {
   )
 
   provisioner "local-exec" {
-    command = "aws ec2 create-tags --resources ${aws_instance.ec2.primary_network_interface_id} --tags Key=Name,Value='${var.infra_provider}-${var.client}-${var.application_domain}${var.environment}-eni-${var.ressource_name}'"
+    command = "aws ec2 create-tags --resources ${aws_instance.ec2.primary_network_interface_id} --tags Key=Name,Value='${var.infra_provider}-${var.owner}-${var.project_application}${var.environment}-eni-${var.ressource_name}'"
   }
 
 }
