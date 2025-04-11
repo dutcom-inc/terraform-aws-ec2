@@ -5,7 +5,6 @@ resource "aws_instance" "ec2" {
     key_name = var.aws_key_name
     iam_instance_profile = var.aws_iam_instance_profile
     private_ip = var.private_ip
-    associate_public_ip_address = var.public_ip
     vpc_security_group_ids = var.security_group_ec2
     disable_api_termination = var.disable_api_termination
     user_data = templatefile("${path.module}/user_data/${var.user_data}", {

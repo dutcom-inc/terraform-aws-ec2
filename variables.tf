@@ -25,6 +25,10 @@ variable "ressource_name" {
   type = string
 }
 
+variable "unique_id" {
+  type = string
+}
+
 ########################
 ### Module variables ###
 ########################
