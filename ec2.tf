@@ -20,7 +20,7 @@ resource "aws_instance" "default" {
         encrypted             = true
         delete_on_termination = true
         tags = {
-            "Name"    = "${var.infra_provider}-${var.owner}-${var.project_application}${var.environment}-ebs-${var.ressource_name}-root"
+            "Name"    = "ebs-root-${var.ressource_name}-${var.unique_id}-${var.environment}"
         }
     }
   tags = merge(
