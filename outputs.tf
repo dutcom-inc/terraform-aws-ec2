@@ -1,5 +1,5 @@
 output "aws_ec2_id" {
-  value = aws_instance.kaptngo.id
+  value = aws_instance.default.id
 }
 
 output "aws_ec2_name" {

@@ -1,4 +1,4 @@
-resource "aws_instance" "ec2" {
+resource "aws_instance" "default" {
     ami = var.ami_id
     instance_type = var.instance_type
     subnet_id = var.aws_subnet_id
